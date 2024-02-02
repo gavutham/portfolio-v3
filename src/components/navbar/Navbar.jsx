@@ -1,10 +1,13 @@
+/* eslint-disable react/jsx-no-target-blank */
 import "./Navbar.scss";
 import { FaGithub, FaTwitter, FaInstagram } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
+import Sidebar from "../sidebar/Sidebar";
 
 const Navbar = () => {
   return (
     <div className="navbar">
+      <Sidebar />
       <div className="wrapper">
         <span>{"<Gavutham/>"}</span>
         <div className="social">
