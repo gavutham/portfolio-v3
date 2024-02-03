@@ -1,5 +1,7 @@
 .navbar {
   height: 100px;
+  position: relative;
+  z-index: 9999999;
 
   .wrapper {
     max-width: 1366px;
