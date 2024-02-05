@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-target-blank */
 import "./Skills.scss";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
 const skills = [
@@ -14,10 +15,36 @@ const skills = [
   "C++",
 ];
 
+const variants = {
+  initial: {
+    x: -500,
+    y: 100,
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
 const Skills = () => {
+  const ref = useRef();
+  const isInView = useInView(ref, { margin: "-100px" });
+
   return (
-    <motion.div className="skills">
-      <motion.div className="textContainer">
+    <motion.div
+      className="skills"
+      variants={variants}
+      initial="initial"
+      animate={isInView && "animate"}
+      ref={ref}
+    >
+      <motion.div className="textContainer" variants={variants}>
         <p>
           and the list goes just
           <br />
@@ -25,16 +52,18 @@ const Skills = () => {
         </p>
         <hr />
       </motion.div>
-      <motion.div className="titleContainer">
+      <motion.div className="titleContainer" variants={variants}>
         <div className="title">
           <div>I Do Craft Some</div>
           <h1>
-            <b>MERN</b> Web Apps and
+            <motion.b whileHover={{ color: "orange" }}>MERN</motion.b> Web Apps
+            and
           </h1>
         </div>
         <div className="title">
           <h1>
-            <b>Flutter</b> Mobile Apps
+            <motion.b whileHover={{ color: "orange" }}>Flutter</motion.b> Mobile
+            Apps
           </h1>
           <a href="https://github.com/gavutham" target="_blank">
             <button>
@@ -43,7 +72,7 @@ const Skills = () => {
           </a>
         </div>
       </motion.div>
-      <motion.div className="listContainer">
+      <motion.div className="listContainer" variants={variants}>
         {skills.map((item) => (
           <div className="wrapper" key={item}>
             <motion.div
