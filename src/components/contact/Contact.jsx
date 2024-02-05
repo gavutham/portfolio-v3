@@ -3,7 +3,8 @@ import { IoMdMail } from "react-icons/io";
 import { FaPhoneAlt } from "react-icons/fa";
 import { IoLocation } from "react-icons/io5";
 import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
+import emailjs from "@emailjs/browser";
 
 const variants = {
   initial: {
@@ -22,7 +23,29 @@ const variants = {
 
 const Contact = () => {
   const ref = useRef();
+  const formRef = useRef();
   const isInView = useInView(ref, { margin: "-100px" });
+  const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    emailjs
+      .sendForm(
+        "service_ifi4kds",
+        "template_1dt7cqq",
+        formRef.current,
+        "JPHzJ7PyW3ulyriMZ"
+      )
+      .then(
+        (result) => {
+          setSuccess(true);
+        },
+        (error) => {
+          setError(true);
+        }
+      );
+  };
 
   return (
     <motion.div
@@ -91,11 +114,15 @@ const Contact = () => {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
+          ref={formRef}
+          onSubmit={sendEmail}
         >
-          <input type="text" required placeholder="Name" />
-          <input type="email" required placeholder="Email" />
-          <textarea rows="5" placeholder="Message" />
+          <input type="text" name="name" required placeholder="Name" />
+          <input type="email" name="email" required placeholder="Email" />
+          <textarea rows="5" placeholder="Message" name="message" />
           <button>Submit</button>
+          {success && "Message Sent Successfully"}
+          {error && "Error Sending the Message, please try again."}
         </motion.form>
       </div>
     </motion.div>
