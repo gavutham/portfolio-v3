@@ -17,7 +17,7 @@ const skills = [
 
 const variants = {
   initial: {
-    x: -100,
+    x: -10,
     y: 100,
     opacity: 0,
   },
@@ -41,7 +41,7 @@ const Skills = () => {
       className="skills"
       variants={variants}
       initial="initial"
-      animate={"animate"}
+      animate={isInView && "animate"}
       ref={ref}
     >
       <motion.div className="textContainer" variants={variants}>

@@ -10,12 +10,20 @@
     padding: 0 20px;
   }
 
+  @include tablet {
+    padding: 0 50px;
+  }
+
   .wrapper {
     height: 100%;
     margin: auto;
     display: flex;
 
     @include mobile {
+      flex-direction: column;
+    }
+
+    @include tablet {
       flex-direction: column;
     }
 
@@ -34,6 +42,14 @@
         text-align: center;
       }
 
+      @include tablet {
+        height: 50%;
+        width: 100%;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+      }
+
       h2 {
         font-size: 30px;
         color: rebeccapurple;
@@ -42,6 +58,10 @@
         @include mobile {
           font-size: 24px;
         }
+
+        @include tablet {
+          font-size: 26px;
+        }
       }
 
       h1 {
@@ -49,6 +69,10 @@
 
         @include mobile {
           font-size: 36px;
+        }
+
+        @include tablet {
+          font-size: 40px;
         }
       }
 
@@ -82,7 +106,17 @@
       width: 100%;
       bottom: 0;
       top: unset;
+      justify-content: center;
     }
+
+    @include tablet {
+      height: 50%;
+      width: 100%;
+      bottom: 0;
+      top: unset;
+      justify-content: center;
+    }
+
     img {
       height: 100%;
     }

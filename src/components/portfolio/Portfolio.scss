@@ -17,6 +17,10 @@
       font-size: 24px;
     }
 
+    @include tablet {
+      padding-top: calc(100vh - 120px);
+    }
+
     .progressBar {
       height: 5px;
       border-radius: 5px;
@@ -46,11 +50,22 @@
         flex-direction: column;
       }
 
+      @include tablet {
+        padding: 50px;
+        padding-top: 120px;
+        flex-direction: column;
+      }
+
       .imgContainer {
         flex: 1;
         height: 50%;
 
         @include mobile {
+          width: 100%;
+          max-height: 300px;
+        }
+
+        @include tablet {
           width: 100%;
           max-height: 300px;
         }
@@ -63,6 +78,7 @@
           @include mobile {
             object-fit: contain;
           }
+
           -webkit-box-shadow: 0px 0px 15px -6px rgb(163, 163, 163);
           -moz-box-shadow: 0px 0px 15px -6px rgba(163, 163, 163);
           box-shadow: 0px 0px 15px -6px rgba(163, 163, 163);
@@ -84,11 +100,22 @@
           text-align: center;
         }
 
+        @include tablet {
+          transform: none !important;
+          padding: 20px;
+          align-items: center;
+          text-align: center;
+        }
+
         h2 {
           font-size: 64px;
 
           @include mobile {
             font-size: 36px;
+          }
+
+          @include tablet {
+            font-size: 50px;
           }
         }
 

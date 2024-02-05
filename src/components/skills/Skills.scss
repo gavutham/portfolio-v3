@@ -23,6 +23,14 @@
       gap: 5px;
     }
 
+    @include tablet {
+      padding: 50px;
+      align-items: end;
+      flex-direction: column;
+      text-align: center;
+      gap: 10px;
+    }
+
     p {
       font-weight: 200;
       font-size: 18px;
@@ -38,6 +46,10 @@
       @include mobile {
         width: 65vw;
       }
+
+      @include tablet {
+        width: 70vw;
+      }
     }
   }
 
@@ -51,6 +63,10 @@
       width: 100%;
     }
 
+    @include tablet {
+      width: 100%;
+    }
+
     .title {
       display: flex;
       gap: 50px;
@@ -60,6 +76,12 @@
         flex-direction: column;
         text-align: center;
         gap: 20px;
+      }
+
+      @include tablet {
+        flex-direction: column;
+        text-align: center;
+        gap: 35px;
       }
 
       div {
@@ -78,6 +100,12 @@
           height: 50px;
           width: 150px;
         }
+
+        @include tablet {
+          font-size: 18px;
+          height: 60px;
+          width: 170px;
+        }
       }
     }
 
@@ -87,6 +115,10 @@
 
       @include mobile {
         font-size: 32px;
+      }
+
+      @include tablet {
+        font-size: 50px;
       }
     }
 
@@ -109,6 +141,12 @@
         width: 150px;
         height: 50px;
       }
+
+      @include tablet {
+        font-size: 18px;
+        height: 60px;
+        width: 170px;
+      }
     }
   }
 
@@ -124,6 +162,11 @@
       padding: 20px;
     }
 
+    @include tablet {
+      flex: 5;
+      padding: 50px;
+    }
+
     .wrapper {
       width: 25%;
       display: flex;
@@ -131,6 +174,10 @@
       justify-content: center;
 
       @include mobile {
+        width: 50%;
+      }
+
+      @include tablet {
         width: 50%;
       }
     }
@@ -148,6 +195,11 @@
       @include mobile {
         font-size: 12px;
         padding: 8px 20px;
+      }
+
+      @include tablet {
+        font-size: 16px;
+        padding: 12px 30px;
       }
     }
   }
