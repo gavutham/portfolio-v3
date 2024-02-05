@@ -53,10 +53,26 @@ const Hero = () => {
             Web and Mobile Application Developer
           </motion.h1>
           <motion.div variants={textVariants} className="buttons">
-            <motion.button variants={textVariants}>
-              See the Latest Works
-            </motion.button>
-            <motion.button variants={textVariants}>Contact Me</motion.button>
+            <a
+              href="#What I Did"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
+              <motion.button variants={textVariants}>
+                See the Latest Works
+              </motion.button>
+            </a>
+            <a
+              href="#Reach Me"
+              style={{ color: "inherit", textDecoration: "none" }}
+            >
+              <motion.button
+                variants={textVariants}
+                style={{ backgroundColor: "white", color: "black" }}
+                whileHover={{ backgroundColor: "transparent", color: "white" }}
+              >
+                Contact Me
+              </motion.button>
+            </a>
           </motion.div>
           <motion.img
             variants={textVariants}
