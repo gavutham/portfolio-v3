@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-target-blank */
 import { useRef } from "react";
 import "./Portfolio.scss";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
@@ -7,26 +8,30 @@ const items = [
   {
     id: 1,
     title: "ShopHub",
-    img: "https://images.pexels.com/photos/4767578/pexels-photo-4767578.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
-    desc: "what to do is what not to do",
+    img: "/shophub.png",
+    desc: "A Fully functional E-Commerce website developed using the MERN Stack.",
+    link: "https://shophub-ecom.netlify.app/",
   },
   {
     id: 2,
     title: "PeoplePedia",
-    img: "https://images.pexels.com/photos/4767578/pexels-photo-4767578.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
-    desc: "what to do is what not to do",
+    img: "/peoplepedia.png",
+    desc: "Here is a exact clone of Facebook app in web application. It even consist real-time chat feature.",
+    link: "https://peoplepedia.netlify.app/",
   },
   {
     id: 3,
     title: "Blog App",
-    img: "https://images.pexels.com/photos/4767578/pexels-photo-4767578.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
-    desc: "what to do is what not to do",
+    img: "/blog.png",
+    desc: "A full fledged blog application where you can read blogs or be yourself an author and publish your own blogs.",
+    link: "https://react-node-blog-site.netlify.app/",
   },
   {
     id: 4,
     title: "Quiz App",
-    img: "https://images.pexels.com/photos/4767578/pexels-photo-4767578.jpeg?auto=compress&cs=tinysrgb&w=400&lazy=load",
-    desc: "what to do is what not to do",
+    img: "/crorepati.png",
+    desc: "The application might be small but never fails to entertain you, give it a try you may win some money.",
+    link: "https://crorepati-by-creatorsneo.netlify.app/",
   },
 ];
 
@@ -49,10 +54,16 @@ const Single = ({ item }) => {
           <motion.div className="textContainer" style={{ y }}>
             <h2>{item.title}</h2>
             <p>{item.desc}</p>
-            <button>
-              <span>Visit Site</span>
-              <FaExternalLinkAlt />
-            </button>
+            <a
+              href={item.link}
+              target="_blank"
+              style={{ textDecoration: "none", color: "inherit" }}
+            >
+              <button>
+                <span>Visit Site</span>
+                <FaExternalLinkAlt />
+              </button>
+            </a>
           </motion.div>
         </div>
       </div>
