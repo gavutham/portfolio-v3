@@ -1,3 +1,5 @@
+@import "../../app.scss";
+
 .skills {
   background: linear-gradient(180deg, #0c0c1d, #111132);
   height: 100%;
@@ -13,6 +15,14 @@
     align-items: center;
     gap: 20px;
 
+    @include mobile {
+      padding: 20px;
+      align-items: end;
+      flex-direction: column;
+      text-align: center;
+      gap: 5px;
+    }
+
     p {
       font-weight: 200;
       font-size: 18px;
@@ -24,6 +34,10 @@
       width: 300px;
       border: none;
       border-top: 0.5px solid gray;
+
+      @include mobile {
+        width: 65vw;
+      }
     }
   }
 
@@ -33,10 +47,20 @@
     flex-direction: column;
     align-items: center;
 
+    @include mobile {
+      width: 100%;
+    }
+
     .title {
       display: flex;
       gap: 50px;
       align-items: center;
+
+      @include mobile {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+      }
 
       div {
         font-size: 58px;
@@ -48,12 +72,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
+        @include mobile {
+          font-size: 16px;
+          height: 50px;
+          width: 150px;
+        }
       }
     }
 
     h1 {
       font-size: 58px;
       font-weight: 100;
+
+      @include mobile {
+        font-size: 32px;
+      }
     }
 
     button {
@@ -69,6 +103,12 @@
       align-items: center;
       justify-content: center;
       gap: 5px;
+
+      @include mobile {
+        font-size: 16px;
+        width: 150px;
+        height: 50px;
+      }
     }
   }
 
@@ -79,8 +119,20 @@
     flex-wrap: wrap;
     justify-content: center;
 
+    @include mobile {
+      flex: 5;
+      padding: 20px;
+    }
+
     .wrapper {
       width: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include mobile {
+        width: 50%;
+      }
     }
 
     .box {
@@ -92,6 +144,11 @@
       align-self: center;
       border-radius: 50px;
       cursor: pointer;
+
+      @include mobile {
+        font-size: 12px;
+        padding: 8px 20px;
+      }
     }
   }
 }
